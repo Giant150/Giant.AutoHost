@@ -92,6 +92,7 @@ namespace Giant.AutoHost
                     listLines.RemoveRange(startIndex, endIndex - startIndex + 1);
 
                 listLines.Add(startLine);
+                listLines.Add($"# Update At {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
                 var hostLines = dicHost.Select(s => $"{s.Value}\t\t{s.Key}").ToList();
                 listLines.AddRange(hostLines);
                 listLines.Add(endLine);
